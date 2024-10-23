@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neovim Keymap Cheat Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .keymap-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* Styling for individual keypresses */
+        .key {
+            font-family: monospace;
+            display: inline-block;
+            background-color: #e2e2e2;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 4px;
+            border: 1px solid #ccc;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Flex container for key combinations (like Ctrl + Space) */
+        .key-combo {
+            display: inline-flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Neovim Keymap Cheat Sheet</h1>
+    <div class="keymap-container">
+        <h2>Normal Mode</h2>
+        <ul>
+            <!-- Correct representation of Leader key with P and V -->
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">p</span><span class="key">v</span> : Open file explorer</li>
+            <li><span class="key-combo"><span class="key">h</span></span> : Move to the left window</li>
+            <li><span class="key-combo"><span class="key">j</span></span> : Move to the bottom window</li>
+            <li><span class="key-combo"><span class="key">k</span></span> : Move to the top window</li>
+            <li><span class="key-combo"><span class="key">l</span></span> : Move to the right window</li>
+            <li><span class="key-combo"><span class="key">b</span></span> : Move to the beginning of the line</li>
+            <li><span class="key-combo"><span class="key">e</span></span> : Move to the end of the line</li>
+            <li><span class="key">J</span> : Join lines and keep cursor in place</li>
+            <li><span class="key-combo"><span class="key">d</span></span> : Scroll down and center the screen</li>
+            <li><span class="key-combo"><span class="key">u</span></span> : Scroll up and center the screen</li>
+            <li><span class="key">n</span> : Go to the next search match and center the screen</li>
+            <li><span class="key">N</span> : Go to the previous search match and center the screen</li>
+            <li><span class="key">Q</span> : Disable Q in normal mode</li>
+            <li><span class="key-combo"><span class="key">f</span></span> : Open a new tmux window in silent mode</li>
+
+            <!-- Leader key combinations -->
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">f</span> : Format using LSP</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">k</span> : Go to the next location list item and center</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">j</span> : Go to the previous location list item and center</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">s</span> : Search and replace word under cursor globally</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">x</span> : Make the current file executable</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">v</span><span class="key">p</span><span class="key">p</span> : Open packer configuration file</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">m</span><span class="key">r</span> : Run CellularAutomaton plugin</li>
+            <li><span class="key">;</span> : Replace ; with : for commands in normal mode</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key"> Space </span> : Source the current file</li>
+        </ul>
+
+        <h2>Insert Mode</h2>
+        <ul>
+            <li><span class="key-combo"><span class="key">h</span></span> : Move the cursor left</li>
+            <li><span class="key-combo"><span class="key">j</span></span> : Move the cursor down</li>
+            <li><span class="key-combo"><span class="key">k</span></span> : Move the cursor up</li>
+            <li><span class="key-combo"><span class="key">l</span></span> : Move the cursor right</li>
+            <li><span class="key-combo"><span class="key">s</span></span> : Save the file</li>
+            <li><span class="key-combo"><span class="key">c</span></span> : Escape insert mode</li>
+            <li><span class="key">F1</span> : Accept codeium suggestion</li>
+        </ul>
+
+        <h2>Visual Mode</h2>
+        <ul>
+            <li><span class="key">J</span> : Move selected text down</li>
+            <li><span class="key">K</span> : Move selected text up</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">y</span> : Yank to system clipboard</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">d</span> : Delete without copying to register</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">p</span> : Paste over and delete the selected text</li>
+        </ul>
+
+        <h2>Visual + Normal Mode</h2>
+        <ul>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">y</span> : Yank to system clipboard</li>
+            <li><span class="key-combo"><span class="key">Space</span></span> <span class="key">d</span> : Delete without copying to register</li>
+        </ul>
+    </div>
+</body>
+</html>
+
